@@ -1,0 +1,123 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Lato', sans-serif;
+    background-color: #fff;
+    color: #252525;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.conteiner{
+    max-width: 968px;
+    margin-left: 24px;
+    margin-right: 24px;
+}
+.conteiner section{
+    height: 100vh;
+    padding: 32px 0;
+}
+.conteiner h3{
+    font-size: 35px;
+    text-align: center;
+    color: #252525;
+}
+.nav{
+    position: fixed;
+    margin: 0 auto;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    width: 400px;
+    height: 70px;
+    background-color: #fafafa;
+    box-shadow: 0 5px 15px 5px #5024ff34;
+    border-radius: 20px;
+}
+.nav .nav-list{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+.nav-list .list-item{
+    position: relative;
+    margin: 0 auto;
+    list-style: none;
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+}
+.list-item .nav-link{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    font-weight: 700;
+}
+.nav-link .icon{
+    position: relative;
+    font-size: 22px;
+    line-height: 53px;
+    color: #252525;
+    transition: 0.5s;
+}
+.nav-list .list-item .active .icon{
+    color: #fff;
+}
+.nav-link .nav-name{
+    position: absolute;
+    margin-top: 60px;
+    font-size: 13px;
+    letter-spacing: 0.8px;
+    color: #252525;
+    font-weight: 700;
+}
+nav li a.active::before{
+    content: '';
+    position: absolute;
+    background-color: #6f75ea;
+    z-index: -1;
+}
+nav li a.active::before{
+    top: 5px;
+    height: 43px;
+    width: 43px;
+    border-radius: 25px;
+}
+.nav-list li a.active::before{
+    animation: scaleY 0.2s linear;
+}
+@keyframes scaleY {
+    0%{transform: scale(0);}
+    60%{transform: scaleY(0.8) translateY(15px);}
+    100%{transform: scale(1);}
+}
+@media screen and (max-width: 320px){
+    .nav{
+        zoom: .8;
+    }
+}
+@media screen and (max-width: 968px){
+    .conteiner{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .nav{
+        zoom: 1.1;
+    }
+}
